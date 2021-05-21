@@ -8,7 +8,7 @@ const Loader = inject(({ AppStore }) => ({
     if (!visible) return <View />
     return (
         <View style={s.container}>
-            <ActivityIndicator size="large" color='white' />
+            <ActivityIndicator size="large" color='black' />
         </View>
     )
 }))
