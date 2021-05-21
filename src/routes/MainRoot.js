@@ -4,6 +4,7 @@ import GlobalStyles from '../utils/GlobalStyles';
 import Loader from '../components/Loader';
 import { Provider } from 'mobx-react';
 import { AppStore } from '../stores'
+import RootNavigator from './RootNavigator/RootNavigator';
 
 const stores = { AppStore }
 
@@ -12,7 +13,12 @@ const MainRoot = () => {
     return (
         <SafeAreaView style={[GlobalStyles.flex1, s.safeArea]}>
             <Provider {...stores}>
-                <Loader />
+                <React.Fragment>
+                    <>
+                        <RootNavigator />
+                        <Loader />
+                    </>
+                </React.Fragment>
             </Provider>
         </SafeAreaView>
     )
