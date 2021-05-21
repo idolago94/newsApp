@@ -1,14 +1,19 @@
 import React from 'react'
-import { SafeAreaView, Text, View, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import GlobalStyles from '../utils/GlobalStyles';
+import Loader from '../components/Loader';
+import { Provider } from 'mobx-react';
+import { AppStore } from '../stores'
+
+const stores = { AppStore }
 
 const MainRoot = () => {
 
     return (
         <SafeAreaView style={[GlobalStyles.flex1, s.safeArea]}>
-            <View style={GlobalStyles.screen}>
-                <Text style={s.appName}>News App</Text>
-            </View>
+            <Provider {...stores}>
+                <Loader />
+            </Provider>
         </SafeAreaView>
     )
 }
