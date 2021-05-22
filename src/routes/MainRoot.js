@@ -1,9 +1,10 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Loader from '../components/Loader';
 import { Provider } from 'mobx-react';
 import { AppStore } from '../stores'
 import RootNavigator from './RootNavigator/RootNavigator';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const stores = { AppStore }
 
