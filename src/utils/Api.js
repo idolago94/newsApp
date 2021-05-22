@@ -8,7 +8,8 @@ class Api {
 export default new Api()
 
 const handleFetch = async (path, method) => {
-    let url = `${Config.API_URL}${path ? path : ''}?access_key=${Config.API_KEY}`
+    let url = 'http://api.mediastack.com/v1/' + path + '?access_key=6391ae6353b550832af2d7265364c72e'//`${Config.API_URL}${path ? path : ''}?access_key=${Config.API_KEY}`
+    console.log("handleFetch -> url", url)
     let init = {
         method: method,
         headers: {
