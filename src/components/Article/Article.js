@@ -3,6 +3,7 @@ import { View, Image, Text, StyleSheet, Button, Dimensions } from 'react-native'
 import { AppStore } from '../../stores'
 import { observer, inject } from 'mobx-react'
 import { isEqual } from 'lodash'
+import { Icon } from 'react-native-eva-icons';
 
 const Article = inject(({ AppStore }) => ({
     myArticles: AppStore.getMyArticles
@@ -16,7 +17,7 @@ const Article = inject(({ AppStore }) => ({
                     <Text style={s.articleDetail}>Author: {data.author || '-'}</Text>
                     <Text style={s.articleDetail}>Source: {data.source || '-'}</Text>
                 </View>
-                <Button style={s.favouriteButton} title={myArticles.find(art => isEqual(art, data)) ? 'unF' : 'F'} onPress={() => AppStore.toggleArticleFavourite(data)} />
+                <Icon name={myArticles.find(art => isEqual(art, data)) ? 'star' : 'star-outline'} width={24} height={24} fill='black' onPress={() => AppStore.toggleArticleFavourite(data)}/>
             </View>
         </View>
     )
