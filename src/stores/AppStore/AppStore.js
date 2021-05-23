@@ -8,6 +8,7 @@ class AppStore {
 
     isLoader = false
     myArticles = []
+    user = null
 
     get getIsLoader() {
         return this.isLoader
@@ -15,6 +16,14 @@ class AppStore {
 
     get getMyArticles() {
         return this.myArticles
+    }
+
+    get getUser() {
+        return this.user
+    }
+
+    setUser(data) {
+        this.user = data
     }
 
     showLoader() {
